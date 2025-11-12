@@ -58,15 +58,18 @@
 }
 
 .footer-logo {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 500;
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.01em;
 }
 
 .footer-tagline {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
+  font-family: var(--font-mono);
 }
 
 .footer-links {
@@ -94,6 +97,25 @@
 .footer-copyright {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+
+.footer-heart {
+  color: #ec4899;
+  display: inline-block;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
