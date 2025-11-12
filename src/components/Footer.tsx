@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenTerms, onOpenPrivacy, onOpenSuppo
         </div>
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} Arko Media Labs. All rights reserved.
+            © {currentYear} Arko Media Labs. All rights reserved. <span className="footer-heart">❤️</span>
           </p>
         </div>
       </div>
