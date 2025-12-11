@@ -1,39 +1,41 @@
 import { useState } from 'react';
-import Header from './components/Header';
+import Background from './components/Background';
+import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import About from './components/About';
 import Services from './components/Services';
+import About from './components/About';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import TermsModal from './components/TermsModal';
-import PrivacyModal from './components/PrivacyModal';
-import SupportModal from './components/SupportModal';
-import './App.css';
+import Modal from './components/Modal';
+import Waitlist from './components/Waitlist';
+
+type ModalType = 'privacy' | 'terms' | null;
 
 function App() {
-  const [isTermsOpen, setIsTermsOpen] = useState(false);
-  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
-  const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [showWaitlist, setShowWaitlist] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <div className="app">
-      <Header
-        onOpenTerms={() => setIsTermsOpen(true)}
-        onOpenPrivacy={() => setIsPrivacyOpen(true)}
-        onOpenSupport={() => setIsSupportOpen(true)}
+    <div className="relative min-h-screen overflow-hidden">
+      <Background />
+      <Navigation
+        scrollToSection={scrollToSection}
+        onOpenWaitlist={() => setShowWaitlist(true)}
       />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-      </main>
-      <Footer
-        onOpenTerms={() => setIsTermsOpen(true)}
-        onOpenPrivacy={() => setIsPrivacyOpen(true)}
-        onOpenSupport={() => setIsSupportOpen(true)}
-      />
-      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
-      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
-      <SupportModal isOpen={isSupportOpen} onClose={() => setIsSupportOpen(false)} />
+      <Hero scrollToSection={scrollToSection} />
+      <Services />
+      <About />
+      <Contact />
+      <Footer setActiveModal={setActiveModal} />
+      <Modal activeModal={activeModal} onClose={() => setActiveModal(null)} />
+      <Waitlist isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
     </div>
   );
 }
