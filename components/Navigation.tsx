@@ -1,18 +1,12 @@
-import { motion } from 'framer-motion';
+'use client'
 
 interface NavigationProps {
   scrollToSection: (id: string) => void;
-  onOpenWaitlist: () => void;
 }
 
-export default function Navigation({ scrollToSection, onOpenWaitlist }: NavigationProps) {
+export default function Navigation({ scrollToSection }: NavigationProps) {
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-      className="fixed top-0 left-0 right-0 z-50"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50">
       {/* Ultra-thin glass nav bar */}
       <div className="max-w-7xl mx-auto px-8 lg:px-12 py-6">
         <div
@@ -26,10 +20,8 @@ export default function Navigation({ scrollToSection, onOpenWaitlist }: Navigati
           }}
         >
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-3 cursor-pointer"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+          <div
+            className="flex items-center gap-3 cursor-pointer hover:scale-[1.02] transition-transform duration-300"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div
@@ -45,7 +37,7 @@ export default function Navigation({ scrollToSection, onOpenWaitlist }: Navigati
             <span className="text-base font-light tracking-tight hidden sm:block" style={{ fontFamily: 'var(--font-family-display)' }}>
               Arko Media Labs
             </span>
-          </motion.div>
+          </div>
 
           {/* Navigation links */}
           <div className="hidden md:flex items-center gap-1">
@@ -54,30 +46,25 @@ export default function Navigation({ scrollToSection, onOpenWaitlist }: Navigati
               { label: 'About', id: 'about' },
               { label: 'Contact', id: 'contact' },
             ].map((item) => (
-              <motion.button
+              <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-5 py-2 font-light transition-colors duration-300 rounded-full"
+                className="px-5 py-2 font-light transition-colors duration-300 rounded-full hover:bg-white/5"
                 style={{
                   fontFamily: 'var(--font-family-body)',
                   fontSize: '0.875rem',
                   letterSpacing: '0.02em',
                 }}
-                whileHover={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                }}
               >
                 {item.label}
-              </motion.button>
+              </button>
             ))}
           </div>
 
           {/* CTA Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={onOpenWaitlist}
-            className="px-6 py-2 text-sm font-medium rounded-full transition-all duration-300"
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
             style={{
               background: 'rgba(255, 255, 255, 0.95)',
               color: '#0a0a0f',
@@ -85,9 +72,9 @@ export default function Navigation({ scrollToSection, onOpenWaitlist }: Navigati
             }}
           >
             Get Started
-          </motion.button>
+          </button>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
