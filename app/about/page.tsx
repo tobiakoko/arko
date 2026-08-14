@@ -1,128 +1,77 @@
-import React from 'react';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
-const About: React.FC = () => {
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'One senior designer-engineer building church websites for Dallas–Fort Worth and beyond. Custom design, plain English, and you own everything.',
+}
+
+export default function AboutPage() {
   return (
-    <div className="pt-32 bg-background-light dark:bg-background-dark min-h-screen">
-      {/* Narrative Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="lg:grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h1 className="text-base text-primary font-semibold tracking-wide uppercase mb-4">Our Story</h1>
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-navy dark:text-white mb-8 leading-tight">
-              We started Arko to solve the <span className="gradient-text">trust problem</span> in web design.
-            </h2>
-            <div className="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              <p>
-                In an industry full of missed deadlines and hidden fees, Arko Media Labs was founded on a simple principle: **High-trust engineering.**
+    <>
+      <section className="container-site pb-16 pt-14 lg:pb-24 lg:pt-20">
+        <p className="type-label mb-5">About</p>
+        <h1 className="type-h1 max-w-[18ch] text-ink">
+          A church&apos;s message shouldn&apos;t be hidden behind an outdated website.
+        </h1>
+        <p className="type-body mt-6 max-w-[65ch] text-text-body">
+          Every person searching for hope deserves to find the church waiting for them. That&apos;s
+          the problem we work on — one church, one website, one grant at a time.
+        </p>
+        <div className="mt-8">
+          <Link href="/health-check" className="btn btn-primary">
+            {SITE.cta}
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-surface-2">
+        <div className="container-site py-16 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="type-label mb-5">The builder</p>
+              <h2 className="type-h2 text-ink">One senior designer-engineer. The person on your proposal is the person who builds your site.</h2>
+            </div>
+            <div className="space-y-5 text-text-body">
+              <p className="leading-relaxed">
+                Arko Media Labs was built on a simple observation: churches do the most important
+                work in a neighborhood, and get the worst web presence. Template farms sell them
+                the same kit fifty churches bought. Big agencies charge more than a church
+                budget can breathe. And the one thing Google gives every eligible church for free
+                — the $10,000/month Ad Grant — sits unclaimed because nobody makes it easy.
               </p>
-              <p>
-                We believe that a website is a company&apos;s most valuable employee. It works 24/7, represents your brand to the world, and handles your most sensitive customer interactions. Why settle for anything less than excellence?
+              <p className="leading-relaxed">
+                So the studio is deliberately small: one senior builder, custom design, plain
+                English, and contracts that say you own your site. The work is engineered as much
+                as designed — fast, accessible, and built to stay fast.
+              </p>
+              <p className="leading-relaxed">
+                If you&apos;re in the Dallas–Fort Worth area, coffee&apos;s on us. If you&apos;re
+                anywhere else, the first call is still free.
               </p>
             </div>
           </div>
-          <div className="mt-12 lg:mt-0 relative">
-             <div className="aspect-square rounded-[3rem] bg-slate-200 dark:bg-slate-800 overflow-hidden shadow-2xl border-8 border-white dark:border-slate-900 rotate-3">
-                <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
-                  alt="Arko Office" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
-             </div>
-             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-          </div>
         </div>
       </section>
 
-      {/* Founder Spotlight */}
-      <section className="bg-navy py-32 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 p-20 opacity-10 pointer-events-none">
-          <span className="material-symbols-outlined text-[20rem]">diversity_3</span>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5 mb-12 lg:mb-0">
-               <div className="relative group">
-                  <div className="absolute inset-0 bg-primary/20 rounded-3xl -rotate-6 group-hover:rotate-0 transition-transform duration-500"></div>
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/5]">
-                    <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
-                      alt="Alex Arko - Founder" 
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-               </div>
-            </div>
-            <div className="lg:col-span-7">
-              <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">Meet the Founder</span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Alex Arko</h2>
-              <div className="space-y-6 text-blue-100/80 leading-relaxed text-lg italic border-l-4 border-primary pl-8">
-                <p>
-                  &ldquo;I spent a decade as a senior engineer at top-tier tech firms before realizing that small to mid-sized businesses were being underserved by &lsquo;template agencies.&rsquo; I founded Arko to bring enterprise-level performance and design to every business, regardless of their size.&rdquo;
-                </p>
-                <p>
-                  &ldquo;When you hire us, you&apos;re not just getting a vendor; you&apos;re getting a technical partner who cares as much about your conversion rate as you do.&rdquo;
-                </p>
-              </div>
-              <div className="mt-10 flex flex-col sm:flex-row gap-8 items-start sm:items-center">
-                 <div>
-                   <p className="font-display text-4xl font-bold text-white">10+</p>
-                   <p className="text-xs uppercase tracking-widest text-slate-400">Years Experience</p>
-                 </div>
-                 <div className="w-px h-12 bg-white/10 hidden sm:block"></div>
-                 <div>
-                   <p className="font-display text-4xl font-bold text-white">200+</p>
-                   <p className="text-xs uppercase tracking-widest text-slate-400">Projects Launched</p>
-                 </div>
-                 <div className="w-px h-12 bg-white/10 hidden sm:block"></div>
-                 <div className="font-outfit text-3xl opacity-60">Alex Arko</div>
-              </div>
-            </div>
-          </div>
+      <section className="container-site py-16 lg:py-24">
+        <p className="type-label mb-8">The promises</p>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['You own everything', 'Site, domain, and content stay yours from day one. No lock-in, cancel anytime after launch.'],
+            ['One human, one business day', 'Your calls and emails get a real answer within one business day. Urgent site-down: same day.'],
+            ['Reports you can read', 'A one-page report you can finish before your coffee gets cold — no dashboard, no jargon.'],
+            ['Built to stay fast', 'Green Core Web Vitals and accessibility are part of the build, not an upgrade.'],
+          ].map(([title, body]) => (
+            <article key={title} className="card !p-6">
+              <h2 className="text-base font-semibold text-ink">{title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-text-body">{body}</p>
+            </article>
+          ))}
         </div>
       </section>
-
-      {/* Values Section */}
-      <section className="py-32 bg-white dark:bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-navy dark:text-white mb-6">Built on core values.</h2>
-            <div className="w-20 h-1 bg-primary mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { 
-                icon: 'speed', 
-                title: 'Radical Speed', 
-                desc: 'Slow sites kill business. We optimize every millisecond because we know speed equals revenue.' 
-              },
-              { 
-                icon: 'visibility', 
-                title: 'Total Transparency', 
-                desc: 'No hidden fees. No technical jargon to hide behind. You get clear updates and honest advice.' 
-              },
-              { 
-                icon: 'diamond', 
-                title: 'Premium Quality', 
-                desc: 'We don’t do "good enough." Every project is a testament to our craft and your ambition.' 
-              }
-            ].map((value, i) => (
-              <div key={i} className="group p-10 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all">
-                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-800 flex items-center justify-center text-primary mb-8 shadow-sm group-hover:scale-110 transition-transform">
-                  <span className="material-symbols-outlined text-3xl">{value.icon}</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default About;
+    </>
+  )
+}

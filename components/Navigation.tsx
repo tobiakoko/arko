@@ -1,80 +1,105 @@
 'use client'
 
-interface NavigationProps {
-  scrollToSection: (id: string) => void;
-}
+import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { SITE } from '@/lib/site'
 
-export default function Navigation({ scrollToSection }: NavigationProps) {
+export default function Navigation() {
+  const pathname = usePathname()
+  const [open, setOpen] = useState(false)
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Ultra-thin glass nav bar */}
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 py-6">
-        <div
-          className="flex items-center justify-between px-6 py-3 rounded-full"
-          style={{
-            background: 'rgba(10, 10, 15, 0.6)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
-          }}
-        >
-          {/* Logo */}
-          <div
-            className="flex items-center gap-3 cursor-pointer hover:scale-[1.02] transition-transform duration-300"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg"
-              style={{
-                background: 'linear-gradient(135deg, rgba(0, 217, 217, 0.2), rgba(255, 107, 107, 0.2))',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                fontFamily: 'var(--font-family-display)',
-              }}
-            >
-              A
-            </div>
-            <span className="text-base font-light tracking-tight hidden sm:block" style={{ fontFamily: 'var(--font-family-display)' }}>
-              Arko Media Labs
+    <header className="sticky top-0 z-40 border-b border-border bg-paper/85 backdrop-blur">
+      <div className="container-site flex h-16 items-center justify-between gap-6">
+        <Link href="/" className="flex min-h-11 items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-ink text-paper" aria-hidden>
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M12 3l8 6v12H4V9l8-6z" strokeLinejoin="round" />
+              <path d="M9 21v-6h6v6" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-lg font-semibold tracking-tight text-ink">Arko Media Labs</span>
+            <span className="hidden text-[0.6875rem] tracking-wide text-text-secondary sm:block">
+              Church Websites & Digital Ministry
             </span>
-          </div>
+          </span>
+        </Link>
 
-          {/* Navigation links */}
-          <div className="hidden md:flex items-center gap-1">
-            {[
-              { label: 'Services', id: 'services' },
-              { label: 'About', id: 'about' },
-              { label: 'Contact', id: 'contact' },
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="px-5 py-2 font-light transition-colors duration-300 rounded-full hover:bg-white/5"
-                style={{
-                  fontFamily: 'var(--font-family-body)',
-                  fontSize: '0.875rem',
-                  letterSpacing: '0.02em',
-                }}
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+          {SITE.nav.map((item) => {
+            const active = pathname === item.href || pathname.startsWith(item.href + '/')
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex min-h-11 items-center rounded-lg px-3.5 text-[0.9375rem] font-medium transition-colors ${
+                  active ? 'text-ink' : 'text-text-secondary hover:text-ink'
+                }`}
+                aria-current={active ? 'page' : undefined}
               >
                 {item.label}
-              </button>
-            ))}
-          </div>
+              </Link>
+            )
+          })}
+          <Link href="/health-check" className="btn btn-primary ml-3 whitespace-nowrap text-[0.9375rem]">
+            {SITE.ctaShort}
+          </Link>
+        </nav>
 
-          {/* CTA Button */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <Link href="/health-check" className="btn btn-primary px-4 text-sm">
+            {SITE.ctaShort}
+          </Link>
           <button
-            onClick={() => scrollToSection('contact')}
-            className="px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
-            style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              color: '#0a0a0f',
-              fontFamily: 'var(--font-family-body)',
-            }}
+            type="button"
+            className="flex h-12 w-12 items-center justify-center rounded-lg border border-border-strong"
+            aria-expanded={open}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
           >
-            Get Started
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              )}
+            </svg>
           </button>
         </div>
       </div>
-    </nav>
-  );
+
+      {open && (
+        <div className="fixed inset-0 top-16 z-30 bg-paper/95 backdrop-blur lg:hidden">
+          <nav className="container-site flex flex-col gap-1 py-8" aria-label="Mobile">
+            {SITE.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="flex min-h-11 items-center rounded-lg px-2 font-display text-2xl text-ink hover:text-amber-700"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/health-check"
+              onClick={() => setOpen(false)}
+              className="btn btn-primary mt-6 w-full"
+            >
+              {SITE.cta}
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-4 text-center text-text-secondary hover:text-ink"
+            >
+              Contact & booking
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
+  )
 }
