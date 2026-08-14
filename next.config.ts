@@ -1,9 +1,11 @@
 import type { NextConfig } from 'next'
 import path from 'path'
 
+const isDev = process.env.NODE_ENV !== 'production'
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+  `script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com${isDev ? " 'unsafe-eval'" : ''}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' blob: data: https://images.unsplash.com https://lh3.googleusercontent.com https://picsum.photos",
