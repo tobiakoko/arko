@@ -1,184 +1,145 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import JsonLd from '@/components/JsonLd'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Transparent starting-at pricing: custom church builds $2,500+, care plans $99/mo, Google Ad Grant setup and management. You own everything.',
+    'Transparent pricing for church websites in DFW: builds from $1,500–$3,000, care plans from $97–200/mo, accessibility audits from $750. You own your site.',
 }
 
-const builds = [
-  {
-    name: 'Essential',
-    price: '$2,500–$3,500',
-    note: 'The church site that fixes Sunday morning',
-    items: [
-      '8–12 custom pages',
-      'Plan-a-Visit pages',
-      'Sermon archive + podcast',
-      'Events + registration',
-      'Giving embed',
-      'Schema + Google Business Profile',
-      '4-week build',
-      'You own it all',
-    ],
-  },
-  {
-    name: 'Custom',
-    price: '$4,000–$7,000',
-    note: 'For larger churches, multi-campus, or deeper builds',
-    items: [
-      'Everything in Essential, plus:',
-      'Spanish or multi-language option',
-      'Multi-campus support',
-      'Membership portal',
-      'Advanced giving flows',
-      '5–6 week build',
-      'Launch training session',
-    ],
-    featured: true,
-  },
-  {
-    name: 'Plant Kit',
-    price: 'From $1,500',
-    note: 'For church plants launching right',
-    items: [
-      'Service info + belief statement',
-      'Sermon-ready podcast setup',
-      'Giving + events essentials',
-      'Google Business Profile setup',
-      '2–3 week build',
-      'Grant eligibility check',
-    ],
-  },
-]
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: 'Arko Media Labs pricing',
+  itemListElement: [
+    {
+      '@type': 'Offer',
+      name: 'Church website build',
+      price: '1500',
+      priceCurrency: 'USD',
+      description: 'Custom church website, starting at $1,500.',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Care plan',
+      price: '97',
+      priceCurrency: 'USD',
+      description: 'Monthly church website care, from $97/month.',
+    },
+  ],
+}
 
-const carePlans = [
+const PLAN_GROUPS = [
   {
-    name: 'Basic',
-    price: '$99/mo',
-    note: 'Keep it fast and secure',
+    title: 'Builds',
     items: [
-      'Hosting + security',
-      'Monthly one-page report',
-      '1 hour of updates / month',
-      'One-business-day response',
-      'Cancel anytime',
+      { name: 'Church website', price: '$1,500–$3,000', body: 'Custom design, Plan Your Visit flow, mobile-first, schema, and local SEO foundations. You own it from day one.' },
+      { name: 'Visibility add-on', price: 'included / from $97/mo', body: 'Map-pack targeting for "church near me [city]" with the 90-day guarantee, as a standalone plan or bundled with a build.' },
+      { name: 'Accessibility audit', price: '$750–$2,500', body: 'WCAG audit by an IAAP CPACC-certified professional, with barriers ranked by impact.' },
     ],
   },
   {
-    name: 'Plus',
-    price: '$199/mo',
-    note: 'Keep it fresh and found',
+    title: 'Care plans (monthly)',
     items: [
-      'Everything in Basic, plus:',
-      'Monthly content refresh',
-      'Quarterly SEO tune-up',
-      'Event + sermon upkeep',
-      'Priority response',
+      { name: 'Church care', price: '$97/mo', body: 'Updates, backups, uptime, and a plain-English monthly report. About $3 a day.' },
+      { name: 'Care + visibility', price: '$200/mo', body: 'Everything in Church care, plus Google Business Profile management and monthly visibility reporting.' },
+      { name: 'Accessibility monitoring', price: '$150–$300/mo', body: 'Ongoing WCAG checks so accessibility stays true as your site evolves.' },
     ],
-    featured: true,
+  },
+  {
+    title: 'Remediation & extras',
+    items: [
+      { name: 'Accessibility remediation', price: '$100–$150/hr', body: 'Fixing the underlying barriers — not overlay widgets — priced on the audit\u2019s prioritized list.' },
+      { name: 'One-off updates', price: 'from $50', body: 'Small changes outside a care plan, billed plainly and quoted before work starts.' },
+      { name: 'Strategy & planning', price: 'quoted separately', body: 'Stand-alone planning work, separately stated on invoices so you know exactly what you paid for.' },
+    ],
   },
 ]
 
 export default function PricingPage() {
   return (
     <>
-      <section className="container-site pb-16 pt-14 lg:pb-24 lg:pt-20">
-        <p className="type-label mb-5">Pricing</p>
-        <h1 className="type-h1 max-w-[16ch] text-ink">Straight numbers. No surprise invoices.</h1>
-        <p className="type-body mt-6 max-w-[65ch] text-text-body">
-          You&apos;ll see the price before the first call. You own your site, domain, and content
-          from day one. Fifty percent deposit to start, balance at launch.
-        </p>
-        <div className="mt-8">
-          <Link href="/health-check" className="btn btn-primary">
-            {SITE.cta}
-          </Link>
+      <JsonLd data={schema} />
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Pricing' }]} />
+      <section className="container-site pb-16 pt-10">
+        <div className="max-w-3xl">
+          <p className="type-eyebrow">Pricing · published, on purpose</p>
+          <h1 className="type-h1 mt-4 text-[clamp(2.25rem,0.75rem+3.5vw,4.5rem)]">
+            You own your site and domain from day one.
+          </h1>
+          <p className="type-lead mt-6">
+            Most agencies hide pricing because the surprises come later. Here are our
+            numbers up front — builds, care plans, and the guarantee — so you know what
+            you&rsquo;re walking into before the first call.
+          </p>
         </div>
       </section>
 
-      <section className="bg-surface-2">
-        <div className="container-site py-16 lg:py-24">
-          <p className="type-label mb-8">Builds</p>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {builds.map((b) => (
-              <article key={b.name} className={`card ${b.featured ? 'border-ink shadow-md' : ''}`}>
-                <p className="type-label">{b.name}</p>
-                <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">{b.price}</p>
-                <p className="mt-1 text-sm text-text-secondary">{b.note}</p>
-                <ul className="mt-6 space-y-3">
-                  {b.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-text-body">
-                      <span className="mt-0.5 text-amber-700" aria-hidden>→</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container-site py-16 lg:py-24">
-        <p className="type-label mb-8">Care plans</p>
-        <div className="grid gap-6 lg:grid-cols-2">
-          {carePlans.map((c) => (
-            <article key={c.name} className={`card ${c.featured ? 'border-ink shadow-md' : ''}`}>
-              <p className="type-label">{c.name}</p>
-              <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">{c.price}</p>
-              <p className="mt-1 text-sm text-text-secondary">{c.note}</p>
-              <ul className="mt-6 space-y-3">
-                {c.items.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-text-body">
-                    <span className="mt-0.5 text-amber-700" aria-hidden>→</span>
-                    {item}
+      <section className="border-y border-line bg-surface py-16">
+        <div className="container-site grid gap-10 lg:grid-cols-3">
+          {PLAN_GROUPS.map((group) => (
+            <div key={group.title}>
+              <h2 className="type-eyebrow mb-6">{group.title}</h2>
+              <ul className="space-y-4">
+                {group.items.map((item) => (
+                  <li key={item.name} className="card p-6">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h3 className="font-medium text-ink">{item.name}</h3>
+                      <span className="type-metric whitespace-nowrap text-sm text-signal-500">
+                        {item.price}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.body}</p>
                   </li>
                 ))}
               </ul>
-            </article>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-surface-2">
-        <div className="container-site py-16 lg:py-24">
-          <p className="type-label mb-8">Google Ad Grant</p>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="card !p-6">
-              <h2 className="text-base font-semibold text-ink">Setup — $750–$1,000</h2>
-              <p className="mt-2 text-sm leading-relaxed text-text-body">
-                Eligibility application, account build, first campaigns, and training. One-time.
-              </p>
-            </div>
-            <div className="card !p-6">
-              <h2 className="text-base font-semibold text-ink">Management — $250–$400/month</h2>
-              <p className="mt-2 text-sm leading-relaxed text-text-body">
-                Monthly refreshes, compliance checks, suspension recovery, one-page reports. The
-                reason most church grants die — handled.
-              </p>
-            </div>
+      <section className="container-site py-16">
+        <div className="mx-auto max-w-4xl rounded-[10px] border border-signal-200 bg-signal-50 p-8 sm:p-12">
+          <h2 className="type-h2">The guarantee, in writing</h2>
+          <div className="mt-6 space-y-4">
+            <p className="text-ink-soft">
+              <span className="font-medium text-ink">90-day visibility guarantee:</span>{' '}
+              no measurable improvement in your Google visibility within 90 days? Your next
+              month is free.
+            </p>
+            <p className="text-ink-soft">
+              <span className="font-medium text-ink">You own everything:</span> your site,
+              your domain, your content — from day one, in writing, in the agreement.
+            </p>
+            <p className="text-ink-soft">
+              <span className="font-medium text-ink">Leaving is easy:</span> month-to-month
+              after the initial term. Cancel anytime — your site leaves with you. No
+              retention maze, no post-cancellation fees.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/scorecard" className="btn btn-primary">
+              {SITE.cta}
+            </Link>
+            <a href={SITE.contact.callHref} className="btn btn-secondary">
+              {SITE.ctaCall}
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="container-site py-16 lg:py-24">
-        <div className="card flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="type-label mb-2">The ownership promise</p>
-            <p className="type-h3 text-ink">Your site, your domain, your content. Always.</p>
-            <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-text-body">
-              Compare us to the $97/month template shops: they host your site, keep it on their
-              platform, and it doesn&apos;t leave with you. With us, you own everything from day
-              one — and the grant is worth up to $10,000/month, more than your website&apos;s cost,
-              every single month.
-            </p>
-          </div>
-          <Link href="/health-check" className="btn btn-primary shrink-0">
-            {SITE.cta}
-          </Link>
+      <section className="border-t border-line bg-surface py-16">
+        <div className="container-site max-w-3xl">
+          <h2 className="type-h2">A note on taxes</h2>
+          <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-soft">
+            Texas taxes data-processing services — website creation and care fall in that
+            bucket. We bill with every line item separately stated, including the taxable
+            portion, so you always know exactly what you&rsquo;re paying for. No bundling,
+            no &ldquo;platform fees,&rdquo; no surprise line items after launch.
+          </p>
         </div>
       </section>
     </>
