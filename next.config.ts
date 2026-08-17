@@ -11,6 +11,7 @@ const csp = [
   "img-src 'self' blob: data: https://images.unsplash.com https://lh3.googleusercontent.com https://picsum.photos",
   "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://monitoring.vercel-analytics.com",
   "frame-ancestors 'none'",
+  "frame-src https://www.google.com",
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
