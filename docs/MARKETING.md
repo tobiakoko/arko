@@ -1,64 +1,65 @@
 # Marketing
 
 ## Target Market & Avatar
-**Niche (PVP winner, 23/30):** Churches & faith-based nonprofits (DFW-local trust, nationwide clients). Go-to-market wedge: DFW African diaspora church network (DCLM/DLBC relationships) for first clients. PVP: Personal fulfillment 9 · Value to marketplace 8 · Profitability 6.
 
-**Avatar — "Pastor David":** Leads a 150–800 member church in the DFW suburbs (or is planting one). 35–55, mission-driven, non-technical. His website is a volunteer-built relic from 2012 — slow, wrong service times, untouched for years. He knows first-time guests Google his church before visiting and is embarrassed by what they find. He's heard rumors of "Google giving churches $10K/month free" but assumes it's too good to be true. He distrusts agencies (a friend got burned on a $5K site that went nowhere), trusts pastor peers, and buys on referral + a pastor he can meet for coffee. He wants one person who "gets church" to just handle it — plain English, no jargon, no surprise bills.
+**Niche:** DFW suburban churches (100–500 members) in the target suburbs — Frisco, McKinney, Lewisville, Garland, Mesquite.
+**PVP Index:** P 7 / V 5 / P 4 = 16/30. Chosen by owner decision over auto repair (23/30) and broad home-service (22/30) — rationale: personal mission fit and existing church relationships (DLBC Tampa, DCLM Lewisville). Recorded as a deliberate override of the PVP recommendation; expansion funnels (auto/home-service) retain the higher economics and remain available.
 
-**USP (locked, passes swap test):** "DFW's local church studio — one senior builder, custom not template, and you own your site. Plus we turn on the $10K/month Google grant most churches leave unclaimed."
+**Avatar — "Pastor Marcus":** 35–60, leads a growing suburban DFW church. His identity is shepherd, not marketer. He fears the church feels invisible to its own community — guests search "church near me" and find nothing, the website shows service times from years ago, and the old template site embarrasses the volunteers who maintain it. He wants first-time guests to find them, feel welcome before they walk in, and keep coming back. Decision-making: pastor + board/committee. Trusts other pastors and denominational networks far more than agencies. Watering holes: denominational conferences and associations, pastor peer networks, ministerial alliances, church-planting groups, Facebook pastor groups, local chambers.
+**Validation status:** pending — customer-interview exercise (5 interviews) to confirm language and pain priorities.
 
-**Primary conversion goal:** Free Church Website Health Check (lead capture → email → booked call).
+**USP (swap test: passes vs REACHRIGHT/Ministry Designs on custom + ownership + local):**
+> "We build custom church websites for DFW churches that first-time guests can find — you own it from day one, one senior person answers the phone, plain-English monthly reports, and a 90-day visibility guarantee."
+
+**Primary conversion goal:** Lead capture — "DFW Church Visibility Scorecard" (quiz/assessment). Transitional CTA: "Book a 15-min call."
 
 ## Before / During / After Grid
-| Phase | Square | Current state | Plan |
+
+| Phase | Square | Current state | Plan (page jobs) |
 |---|---|---|---|
-| BEFORE | 1. Target Market | Niche + avatar locked | Homepage hero speaks directly to Pastor David |
-| BEFORE | 2. Message | Generic creative-agency copy ("Your story. Amplified.") | StoryBrand pass (Phase 2) + sticky pass (Phase 3) |
-| BEFORE | 3. Media | None (no SEO, no city pages, no content) | City pages "church web design [suburb]", Google Ad Grant guide post, GBP, pastor workshops |
-| DURING | 4. Capture Leads | No lead magnet | **Health Check landing page** — site's single primary goal |
-| DURING | 5. Nurture | None | Tiered email follow-up by Health Check score (Phase 9) |
-| DURING | 6. Convert | No pricing, no booking | Transparent Pricing page + "Book a call" |
-| AFTER | 7. Experience | Ad hoc | Care plans, launch training, plain-English monthly reports |
-| AFTER | 8. Lifetime Value | None | Care plan (Basic $99 / Plus $199) + Ad Grant management ($250–400/mo) upsells |
-| AFTER | 9. Referrals | None | Named-pastor referral asks, referral fee (separate from reviews) |
+| BEFORE | 1. Target Market | No niche message; creative-agency site | Home + church landing path speak only to DFW churches |
+| BEFORE | 2. Message | "Your story. Amplified." | USP + outcome headlines ("Help first-time guests find you online") |
+| BEFORE | 3. Media | None (old site) | Own-site church city pages ("church web design [suburb]"), GBP, denominational networks, pastor referrals |
+| DURING | 4. Capture Leads | No lead capture | **Church Visibility Scorecard** (primary goal) + "Book a 15-min call" (transitional) |
+| DURING | 5. Nurture | None | Tiered email by score (Phase 9) |
+| DURING | 6. Convert | None | Starter build → care plan $97–200/mo → premium (guide §5 ladder) |
+| AFTER | 7. Experience | None | SLA, onboarding SOP, plain-English reports (guide §3) |
+| AFTER | 8. Lifetime Value | None | Build → care → premium redesigns; accessibility add-ons |
+| AFTER | 9. Referrals | None | Denominational referral system (bill credit/flat fee) — reviews kept separate (guide §4) |
 
 ## Channels
+
 | Channel | Approach | Owner | Status |
 |---|---|---|---|
-| Pastor referral network (diaspora + denominational) | 3 named referrals per delivered church; pastor-to-pastor | Founder | Active from launch |
-| Local SEO (city pages + GBP + Ad Grant guide) | "church web design [suburb]" long-tail | Founder | Build into site |
-| Free workshops ("Digital Ministry for Growing Churches") | Quarterly, hosted at partner churches | Founder | Planned |
-| Google Ad Grant wedge | Eligibility check on every call | Founder | Active from launch |
-| Chamber (Frisco/McKinney) | One chamber, attend not just join | Founder | Month 2–3 |
-| Content | 1 plain-English guide/month (Ad Grant, Easter pages, slow websites) | Founder | Ongoing |
+| Church networks / denominational referrals | Primary: DLBC, DCLM + pastor peer networks | Founder | active-pending |
+| Own-site church city pages + GBP | "Church web design [suburb]" pages, map-pack target | Founder | pending (Phase 2+) |
+| Pastor direct outreach | Loom-adapted audit for church sites | Founder | pending |
+| Chambers / BNI | Join where church members are; referral-fed | Founder | pending (guide §4) |
+| Auto/home-service (expansion) | ASA-NTX, Loom audits, Ron's Body Shop case study | Founder | deferred — expansion funnel, higher economics |
 
 ## Word-of-Mouth (STEPPS)
 | Lever | Idea | Status |
 |---|---|---|
-| Social currency | Church gets a "2026-grade" site their peers notice; pastor tells pastors | Design phase |
-| Trigger | Ad Grant "free $10K" is the recurring conversational hook | Locked |
-| Emotion | Pastor pride: no more embarrassment when guests Google the church | Phase 2–3 |
-| Public | Case studies + before/after Core Web Vitals scores | Phase 8 |
-| Practical value | Health Check gives real, actionable fixes | Phase 9 |
-| Story | Client story: "church went from invisible to found" | Phase 3 |
+| — | Pending Phase 3 (made-to-stick) | |
 
 ## Outbound Process
-Referral-led; no cold email volume. Sequence: named referral intro → 30-min discovery call (attendance, growth goals, current site, tools, decision-maker list) → free Health Check delivered in call → one-page proposal with 50% deposit. Decision-maker sign-off (pastor + board chair) confirmed before proposal.
+Pending Phase 8/9 — roles, sequences, qualification, handoff (guide §4 Loom workflow + referral loop as baseline).
 
 ## Referral & Invite Mechanics
-- Flat fee or bill credit for introductions that close — **kept strictly separate from Google review requests** (never incentivize reviews).
-- Ask at peak satisfaction: right after launch + after first monthly report.
-- Exact language: "Know another pastor whose church needs a better online presence? I'd be honored by the introduction — and your church gets a credit."
+Denominational referral system: bill credit or flat fee for introductions that close; **kept fully separate from Google-review requests** (guide §4 — reviews never incentivized).
 
-## Nurture Sequences (Phase 9 — segmented by Health Check tier; no spam, unsubscribe anytime)
+## Nurture Sequences (Phase 9 — scorecard-marketing)
 
-**Instant (all tiers):** results email + PDF report ("Your Church's Digital Health Score is ready — here's your fix-it list and 3 easy wins this week").
-**Abandon recovery (any tier):** "Your progress is saved — pick up where you left off" (email is captured before questions, so every starter is recoverable).
+Tier-segmented by score — never one-size-fits-all. Sequences per tier: **Low** (needs help most: education + easy wins), **Medium** (sweet spot: plan + call), **High** (maintain: monitoring + consult). Pain-point data volunteered is used to tailor help, never to pressure.
 
-| Tier | Sequence (3 emails) | Angle | CTA |
-|---|---|---|---|
-| The Hidden Church (0–19) | 1. Your score + why Google can't see you yet · 2. Easy win: Google Business Profile in an afternoon · 3. Easy win: service times above the fold | Foundational wins — success builds trust | Free 20-min first-steps call |
-| Found, but overlooked (20–34) | 1. Your score + "neighbors find you, then leave" · 2. First impressions: what a guest's phone shows · 3. The grant: your $10K is sitting unclaimed | First impression + grant | Free Health Check report call |
-| Sunday-ready (35–50) | 1. Your score + "strong foundation" · 2. The grant strategy: turning $10K/month into new families · 3. Cost-of-delay: another month, another family picks the church that showed up | Grant strategy | Free grant strategy call |
+**Triggers:**
+| Trigger | Email | Content |
+|---|---|---|
+| Completion | Immediate | Results + PDF + tier CTA (results page mirrors this) |
+| Abandonment | +1 day | "You started the scorecard — finish in 2 minutes, your progress is saved" |
+| W1 | +7 days | Low: "3 easy first steps to get found this week" · Med: "What your score means — and the one fix with the biggest payoff" · High: "How to keep your visibility while you focus on ministry" |
+| W3 | +21 days | Objection/content: the ownership wedge story (agency lock-in → "you own it"), case study (pending evidence), cost-of-delay stakes ("families searching 'church near me' right now") |
+| W6 | +42 days | Direct CTA: "Still not found on Google?" + book-a-call |
+| Ongoing | Monthly | Value-led visibility content (resources series), seasonal hooks (Easter/Christmas guest-search windows) |
 
-**Referral hook rides every sequence footer:** "Know another pastor whose church needs this? I'd be honored by the introduction — and your church gets a credit." (Separate from review requests — never incentivize reviews.)
+Non-responders continue on the monthly value drip — no hard-sell escalation beyond the W6 direct ask.

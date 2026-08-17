@@ -1,17 +1,31 @@
-# Experiment Log — Arko Media Labs
+# Experiments
 
-Rules: no invented evidence. Every experiment: hypothesis, primary metric, sample, duration, then honest results — never peeked, never rerun to get a desired answer. Bold tests only (the 10x screen): no button-color or font-size swaps.
+Hypothesis log for the Arko site (cro-methodology, Phase 8). Format: "If we [change X], then [metric Y] will improve because [reason based on research]." One experiment at a time; 95% confidence, ≥1 full business cycle; decide sample size + duration up front, then report whatever the pre-set test returns (no peeking, no reruns until the answer you want).
 
-## Backlog (post-launch, in ICE priority order)
+## Backlog (ICE-ranked)
 
-| # | Hypothesis (If… then… because…) | Primary metric | ICE | Status |
+| ID | Hypothesis (If → Then → Because) | Primary metric | I | C | E | Avg |
+|---|---|---|---|---|---|---|
+| E1 | If the ownership wedge panel sits above the fold next to the hero, then scorecard starts increase because the lock-in fear is answered at the first friction point (Hibu/Townsquare teardown) | Scorecard starts / session | 7 | 8 | 9 | 8.0 |
+| E2 | If the empty map-pack card leads the hero instead of a photo, then scorecard starts increase because visitors see the outcome in their own search language | Scorecard starts / session | 8 | 7 | 8 | 7.7 |
+| E3 | If the scorecard promises "score in 5 minutes" with a progress bar, then completion increases because the effort objection is answered | Completion rate | 7 | 7 | 7 | 7.0 |
+| E4 | If the pricing page leads with care plans ($97/mo) instead of builds, then care-plan inquiries increase because the entry price answers the price objection first | Care-plan inquiries | 7 | 5 | 8 | 6.7 |
+| E5 | If city pages use pastor-specific local copy instead of generic, then city-page leads increase because the fit objection is answered in the visitor's own context | City-page leads | 6 | 6 | 6 | 6.0 |
+
+## Skipped (10x screen)
+
+Button colors, font sizes, image swaps — cannot 10x results; do not spend traffic.
+
+## Rules
+
+- Research first: objections come from interviews (5 pastor interviews tracked), not guesses.
+- Bold tests only: a change that couldn't double conversion isn't worth the sample.
+- Document before (hypothesis, primary metric, sample size, duration) and after (raw numbers, confidence interval, learnings, next steps).
+- Scale winners to the whole funnel (landing pages, ad copy, email sequences).
+- A failed test that teaches something beats a win you don't understand.
+
+## Status
+
+| Date | Experiment | Result | Learning | Applicable to |
 |---|---|---|---|---|
-| E1 | Hero hook variants (grant line vs H1 alone vs both) → Health Check form starts lift, because the grant is the curiosity gap | Form starts / session | I7 C8 E10 = 8.3 | pending |
-| E3 | Form embedded in hero vs dedicated /health-check page → capture lifts, because friction is distance | Capture rate | I8 C6 E8 = 7.3 | pending |
-| E2 | Health Check question count 12 vs 6 → completion lifts, because shorter beats exhaustive | Completion rate | I6 C6 E9 = 7.0 | pending |
-| E4 | Testimonial placement hero vs Guide section (once real quotes exist) → CTA clicks | CTA clicks | I5 C6 E10 = 7.0 | pending — blocked on evidence |
-| E5 | Stakes section on/off → form starts | Form starts | I5 C5 E10 = 6.7 | pending |
-
-## Results
-
-_Empty until post-launch. Rule 8: only real numbers._
+| (none yet) | | | | |
